@@ -4,9 +4,11 @@ const Navbar = () => {
   return (
     <ul className="navbar">
       <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
         <NavLink to="/pokemon">Pokedex</NavLink>
       </li>
-      <li>tbd</li>
       <li>tbd</li>
     </ul>
   );

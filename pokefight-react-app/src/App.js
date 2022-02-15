@@ -12,17 +12,14 @@ function App() {
     fetch("http://localhost:3001/pokemon")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setPokemonData(data);
       });
   }, []);
 
-  console.log(pokemonData);
-
   return (
     <div className="App">
       <Navbar />
-      <PokeContext.Provider value={pokemonData}>
+      <PokeContext.Provider value={{ pokemonData }}>
         <Switch>
           <Route exact path="/">
             <h1>Welcome to Pokefight!</h1>
