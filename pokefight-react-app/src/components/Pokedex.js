@@ -1,6 +1,7 @@
 import { Card } from "react-bootstrap";
 import PokeContext from "../context/pokeContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Pokedex = () => {
@@ -19,8 +20,12 @@ const Pokedex = () => {
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`}
               />
               <Card.Body>
-                <Card.Title>{pokemon.name.english}</Card.Title>
                 <Card.Text>#{pokemon.id}</Card.Text>
+                <Card.Title>
+                  <Link to={`/pokemon/${pokemon.id}`}>
+                    {pokemon.name.english}
+                  </Link>
+                </Card.Title>
               </Card.Body>
             </Card>
           );

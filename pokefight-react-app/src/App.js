@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Pokedex from "./components/Pokedex";
 import PokeContext from "./context/pokeContext";
+import SinglePokemon from "./components/SinglePokemon";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -27,7 +28,9 @@ function App() {
           <Route exact path="/pokemon">
             <Pokedex />
           </Route>
-          <Route exact path="/pokemon/:id"></Route>
+          <Route exact path="/pokemon/:id">
+            <SinglePokemon />
+          </Route>
           <Route exact path="/pokemon/:id/:info"></Route>
         </Switch>
       </PokeContext.Provider>
