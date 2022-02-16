@@ -11,11 +11,18 @@ const SinglePokemon = () => {
   console.log(pokemonData);
 
   return (
-    <div className="single-container">
-      <h2>Single View:</h2>
+    <div className="pokecards-container">
+      <h2>Details View:</h2>
       <div className="single">
         {singlePokemon && (
-          <Card key={singlePokemon.id} style={{ width: "18rem" }}>
+          <Card
+            key={singlePokemon.id}
+            style={{
+              width: "18rem",
+              border: "2px solid rgb(38, 38, 194)",
+              backgroundColor: "rgb(255, 242, 167)",
+            }}
+          >
             <Card.Img
               variant="top"
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${singlePokemon.id}.png`}
@@ -33,9 +40,9 @@ const SinglePokemon = () => {
               {singlePokemon.type[1] && (
                 <Card.Text>Type 2: {singlePokemon.type[1]}</Card.Text>
               )}
-              <Card.Text>
+              <Card.Subtitle>
                 <h5>Base Stats</h5>
-              </Card.Text>
+              </Card.Subtitle>
               <Card.Text>HP: {singlePokemon.base.HP}</Card.Text>
               <Card.Text>Attack: {singlePokemon.base.Attack}</Card.Text>
               <Card.Text>Defense: {singlePokemon.base.Defense}</Card.Text>

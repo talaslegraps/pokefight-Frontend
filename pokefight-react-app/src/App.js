@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import Pokedex from "./components/Pokedex";
 import PokeContext from "./context/pokeContext";
 import SinglePokemon from "./components/SinglePokemon";
+import pokefightHeader from "./media/Pokefight-header.png";
+import pokegang from "./media/pokegang.png";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -23,7 +25,13 @@ function App() {
       <PokeContext.Provider value={{ pokemonData }}>
         <Switch>
           <Route exact path="/">
-            <h1>Welcome to Pokefight!</h1>
+            <div className="home-container">
+              <img src={pokefightHeader} alt="Pokefight header" />
+              <img
+                src={pokegang}
+                alt="Bulbasaur, Squirtle, Charmander and Pikachu"
+              />
+            </div>
           </Route>
           <Route exact path="/pokemon">
             <Pokedex />
