@@ -34,7 +34,7 @@ html {
   border-radius: 10px;
   padding: 0.5rem;
   background-color: lightblue;
-  color: rgb(53, 93, 159);
+  color: rgb(0, 0, 212);
 }
 
 .pokenavbar a:hover {
@@ -110,4 +110,19 @@ html {
 
 .card p {
   margin-bottom: 5px;
+}
+
+.standard-btn {
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid rgb(53, 93, 159);
+  border-radius: 10px;
+  padding: 0.5rem;
+  background-color: lightblue;
+  color: rgb(0, 0, 212);
+}
+
+.standard-btn:hover {
+  background-color: rgb(53, 93, 159);
+  color: rgb(252, 227, 52);
 }
