@@ -1,8 +1,7 @@
 import { Card } from "react-bootstrap";
 import PokeContext from "../context/pokeContext";
 import { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useParams } from "react-router-dom";
 
 const SinglePokemon = () => {
   const { pokemonData } = useContext(PokeContext);
@@ -12,7 +11,6 @@ const SinglePokemon = () => {
 
   return (
     <div className="pokecards-container">
-      <h2>Details View:</h2>
       <div className="single">
         {singlePokemon && (
           <Card
@@ -29,19 +27,28 @@ const SinglePokemon = () => {
             />
             <Card.Body>
               <Card.Text>#{singlePokemon.id}</Card.Text>
-              <Card.Title>
-                <Link to={`/pokemon/${singlePokemon.id}`}>
-                  {singlePokemon.name.english}
-                </Link>
+              <Card.Title
+                style={{
+                  fontWeight: "900",
+                  fontSize: "2rem",
+                }}
+              >
+                {singlePokemon.name.english}
               </Card.Title>
               <Card.Text>
-                Type{singlePokemon.type[1] && " 1"}: {singlePokemon.type[0]}
+                Type{singlePokemon.type[1] && " 1"}:{" "}
+                <span>{singlePokemon.type[0]}</span>
               </Card.Text>
               {singlePokemon.type[1] && (
                 <Card.Text>Type 2: {singlePokemon.type[1]}</Card.Text>
               )}
-              <Card.Subtitle>
-                <h5>Base Stats</h5>
+              <Card.Subtitle
+                style={{
+                  fontWeight: "700",
+                  fontSize: "1.5rem",
+                }}
+              >
+                Base Stats
               </Card.Subtitle>
               <Card.Text>HP: {singlePokemon.base.HP}</Card.Text>
               <Card.Text>Attack: {singlePokemon.base.Attack}</Card.Text>
