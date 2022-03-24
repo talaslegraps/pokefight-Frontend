@@ -101,7 +101,12 @@ html {
 }
 
 .single {
-  margin-top: 1rem;
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+}
+
+.single .standard-btn {
+  margin-top: 3rem;
 }
 
 .card-subtitle {

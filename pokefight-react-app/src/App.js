@@ -17,7 +17,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetch("http://localhost:3001/pokemon")
+    fetch("https://my-pokefight-api.herokuapp.com/pokemon")
       .then((res) => {
         if (res.ok) return res.json();
         throw new Error(
